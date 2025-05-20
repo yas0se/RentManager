@@ -23,7 +23,7 @@ public class ObjetController {
             @ModelAttribute("objet") Objet objet,
             ModelMap modelMap) {
         Objet temp = objectService.saveObjet(objet);
-        String messageController = "L'objet : "+ temp.getNomObjet() +" est ajouté avec sucsée.";
+        String messageController = "L'objet : "+ temp.getName() +" est ajouté avec sucsée.";
         modelMap.addAttribute("messageJsp", messageController);
         return "CreateObjet";
     }

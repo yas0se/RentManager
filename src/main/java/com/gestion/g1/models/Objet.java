@@ -1,58 +1,60 @@
 package com.gestion.g1.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Objet {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idObjet;
-    private String nomObjet;
-    private  String descriptionObjet;
-//    private User ownerObject;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Objet(String nomObjet, String descriptionObjet) {
-        this.nomObjet = nomObjet;
-        this.descriptionObjet = descriptionObjet;
+    private String name;
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private User owner;
+
+    // Constructors, getters, and setters
+    public Objet() {}
+
+    public Objet(String name, String description, User owner) {
+        this.name = name;
+        this.description = description;
+        this.owner = owner;
     }
 
-    public Objet() {
-        super();
+
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public String toString() {
-        return "Objet{" +
-                "idObjet=" + idObjet +
-                ", nomObjet='" + nomObjet + '\'' +
-                ", descriptionObjet='" + descriptionObjet + '\'' +
-                '}';
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public long getIdObjet() {
-        return idObjet;
+    public String getName() {
+        return name;
     }
 
-    public void setIdObjet(long idObjet) {
-        this.idObjet = idObjet;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNomObjet() {
-        return nomObjet;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNomObjet(String nomObjet) {
-        this.nomObjet = nomObjet;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getDescriptionObjet() {
-        return descriptionObjet;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setDescriptionObjet(String descriptionObjet) {
-        this.descriptionObjet = descriptionObjet;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }

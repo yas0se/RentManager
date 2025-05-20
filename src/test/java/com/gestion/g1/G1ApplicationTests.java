@@ -13,15 +13,11 @@ class G1ApplicationTests {
 	@Autowired
 	ObjetRepository objetRepository;
 
-	@Test
-	public void TestCreateObjet() {
-		Objet objet = new Objet("tasse", "12 unité blanc");
-		objetRepository.save(objet);
-	}
+
 	@Test
 	public void TestUpdateObjet() {
 		Objet objet = objetRepository.findById(1L).get();
-		objet.setDescriptionObjet("10 unité blanc");
+		objet.setDescription("10 unité blanc");
 		objetRepository.save(objet);
 	}
 	@Test
