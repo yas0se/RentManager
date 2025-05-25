@@ -19,6 +19,9 @@ public class ObjetServiceImpl implements ObjectService{
 
     @Override
     public Objet updateObjet(Objet objet) {
+        if (objet.getIdObjet() == null || !objetRepository.existsById(objet.getIdObjet())) {
+            throw new RuntimeException("Objet non existant avec l'id : " + objet.getIdObjet());
+        }
         return objetRepository.save(objet);
     }
 

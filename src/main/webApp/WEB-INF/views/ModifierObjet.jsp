@@ -8,23 +8,26 @@
     </head>
     <body>
         <header>
-            <h1>Objet Creation</h1>
+            <h1>Objet Modification</h1>
         </header>
         <main>
-            <form action="saveObjet" method="post">
+            <form action="modifierObjet" method="post">
+                <div>
+                    <label hidden for="idObjet">Objet id : </label>
+                    <input hidden type="text" id="idObjet" name="idObjet" value="${ObjetDisplay.idObjet}">
+                </div>
                 <div>
                     <label for="nomObjet">Objet Name : </label>
-                    <input type="text" id="nomObjet" name="nomObjet">
+                    <input type="text" id="nomObjet" name="nomObjet" value="${ObjetDisplay.nomObjet}">
                 </div>
                 <div>
                     <label for="descriptionObjet">Description : </label>
-            	     <input type="text" id="descriptionObjet" name="descriptionObjet">
+            	     <input type="text" id="descriptionObjet" name="descriptionObjet" value="${ObjetDisplay.descriptionObjet}">
                 </div>
                 <div>
-                    <input type="submit" value="Save">
+                    <input type="submit" value="Update">
                 </div>
             </form>
-            ${messageJsp}
         </main>
         <footer>
             <a href="objetList">Objets List</a>
