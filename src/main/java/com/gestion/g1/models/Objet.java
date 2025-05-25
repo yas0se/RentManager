@@ -32,11 +32,11 @@ public class Objet {
                 '}';
     }
 
-    public long getIdObjet() {
+    public Long getIdObjet() {
         return idObjet;
     }
 
-    public void setIdObjet(long idObjet) {
+    public void setIdObjet(Long idObjet) {
         this.idObjet = idObjet;
     }
 

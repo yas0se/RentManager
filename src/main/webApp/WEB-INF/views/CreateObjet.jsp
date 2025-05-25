@@ -27,7 +27,7 @@
             ${messageJsp}
         </main>
         <footer>
-            <a href="ObjetsList">Objets List</a>
+            <a href="objetList">Objets List</a>
         </footer>
     </body>
 </html>
