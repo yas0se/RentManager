@@ -64,5 +64,9 @@ public class ObjetController {
         modelMap.addAttribute("ObjetList", objets);
         return "ObjetList";
     }
+    @RequestMapping("/")
+    public String home(){
+        return "redirect:/objetList";
+    }
 
 }

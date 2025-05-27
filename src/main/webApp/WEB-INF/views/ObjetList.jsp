@@ -11,6 +11,7 @@
     <title>Objets List</title>
 </head>
 <body>
+<jsp:include page="navbar.jsp" />
 <div class="container mt-5">
     <header class="mb-4">
         <h1 class="text-center">Objets List</h1>
