@@ -21,11 +21,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Bienvenue, <%= username %></a>
                 </li>
-                <li class="nav-item">
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">Bienvenue, <%= username %>
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
+                <li class="nav-item ms-auto">
+                    <a class="nav-link text-danger" href="/logout" style="font-weight: bold;">Logout</a>
                 </li>
             </ul>
         </div>

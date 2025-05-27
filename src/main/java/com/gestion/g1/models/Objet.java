@@ -12,11 +12,20 @@ public class Objet {
     private String nomObjet;
     private  String descriptionObjet;
 //    private User ownerObject;
+    private String username;
 
+    public String getUsername() {
+        return username;
+    }
 
-    public Objet(String nomObjet, String descriptionObjet) {
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Objet(String nomObjet, String descriptionObjet, String username) {
         this.nomObjet = nomObjet;
         this.descriptionObjet = descriptionObjet;
+        this.username = username;
     }
 
     public Objet() {

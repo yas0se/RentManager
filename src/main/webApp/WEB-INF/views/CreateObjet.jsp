@@ -1,3 +1,9 @@
+<%@ page import="java.security.Principal" %>
+<%
+    Principal user = request.getUserPrincipal();
+    String username = (user != null) ? user.getName() : "Invité";
+%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,6 +26,11 @@
                     <div class="mb-3">
                         <label for="nomObjet" class="form-label fw-bold">Objet Name:</label>
                         <input type="text" class="form-control" id="nomObjet" name="nomObjet" required>
+                    </div>
+                    <div class="mb-3" >
+                        <label for="username" class="form-label fw-bold">Objet Owner:</label>
+                        <input type="text" class="form-control" id="username" name="username" value="<%= username %>" readonly>
+
                     </div>
 
                     <div class="mb-4">

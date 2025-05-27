@@ -3,6 +3,8 @@ package com.gestion.g1.services;
 import com.gestion.g1.models.Objet;
 import com.gestion.g1.repositories.ObjetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +34,8 @@ public class ObjetServiceImpl implements ObjectService{
 
     @Override
     public List<Objet> getAllObjet() {
-        return objetRepository.findAll();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return objetRepository.findByUsername(authentication.getName());
     }
 
     @Override

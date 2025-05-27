@@ -18,15 +18,14 @@ public class SecurityConfig {
     PasswordEncoder passwordEncoder;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http.formLogin();
-//        http.authorizeHttpRequests().anyRequest().authenticated();
-//        return http.build();
-
         http.authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login", "/register").permitAll()
                         .anyRequest().authenticated()
                 )
-                .formLogin(Customizer.withDefaults()); // utilise formulaire de login par défaut
+                .formLogin(Customizer.withDefaults());
+        http.csrf(csrf -> csrf.disable());
+
+
         return http.build();
     }
 

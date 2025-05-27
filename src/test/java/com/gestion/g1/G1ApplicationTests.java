@@ -15,7 +15,7 @@ class G1ApplicationTests {
 
 	@Test
 	public void TestCreateObjet() {
-		Objet objet = new Objet("tasse", "12 unité blanc");
+		Objet objet = new Objet("tasse", "12 unité blanc","user");
 		objetRepository.save(objet);
 	}
 	@Test
